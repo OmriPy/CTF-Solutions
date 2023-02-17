@@ -1,0 +1,14 @@
+Possible solutions:
+
+1:
+./cmd1 '/bin/cat fla*'
+
+2:
+echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+./cmd1 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; cat fla*'
+
+3:
+./cmd1 /bin/nano
+^R
+flag
