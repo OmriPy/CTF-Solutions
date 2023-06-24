@@ -11,7 +11,7 @@ for(i=0; i<6; i++){
 }
 ```
 
-simply tells us that each byte is within the range 1-45 (included) in decimal.
+assures us that each byte is within the range 1-45 (included) in decimal.
 The key to finding the flag is brute-forcing the 6 correct bytes.
 
 Just as I wrote in my code, you nest 6 for loops that every one of them iterates between 1 to 45, because there could be 45^6 possiblities.
