@@ -1,5 +1,4 @@
 from pwn import *
-from pwnlib.tubes.remote import remote as rmt
 
 def num(output):
         return int(output.split('=')[1].split(' ')[0])
@@ -36,17 +35,12 @@ def bin_search(N, r):
                                 continue
                         if output == '9':
                                 output = found_counterfeit(nums, r)
-                        #print(nums)
                         print(output)
                         return success_index(output)
                 if output[-1] == '9':
                         high = mid
                 elif output[-1] == '0':
                         low = mid + 1
-                else:
-                        exit()
-        return -1
-
 
 def main():
         context(arch='i386', os='linux')
